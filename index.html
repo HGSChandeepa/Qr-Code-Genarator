@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./script.js" defer></script>
+    <title>QR genarator</title>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header>
+      <h2>QR Code Genarator</h2>
+    </header>
+
+    <!-- main -->
+    <main>
+      <div class="image">
+        <img src="./images/qr-image.gif" alt="image" />
+      </div>
+      <div class="content">
+        <h2>QR Code Genarator</h2>
+        <p>
+          QR Codes allow smartphone users to access your website simply and
+          quickly.
+        </p>
+        <p>
+          Enter your URL below to generate a QR Code and download the image.
+        </p>
+        <form id="generate-form">
+          <input
+            id="url"
+            type="url"
+            placeholder="Enter a URL"
+            class="inputurl"
+          />
+
+          <select class="selected" name="size" id="size">
+            <option value="100">100x100</option>
+            <option value="200">200x200</option>
+            <option value="300" selected>300x300</option>
+            <option value="400">400x400</option>
+            <option value="500">500x500</option>
+            <option value="600">600x600</option>
+            <option value="700">700x700</option>
+          </select>
+          <button class="submit" type="submit">Generate QR Code</button>
+        </form>
+      </div>
+    </main>
+
+    <div id="generated">
+      <!-- Spinner -->
+      <div id="spinner" class="loader"></div>
+
+      <div id="qrcode"></div>
+    </div>
+  </body>
+</html>
